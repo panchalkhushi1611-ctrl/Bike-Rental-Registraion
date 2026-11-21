@@ -1,0 +1,56 @@
+<resources>
+    <style name="Theme.BikeRental" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/navy</item>
+        <item name="colorPrimaryVariant">@color/navy_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/orange</item>
+        <item name="colorSecondaryVariant">@color/orange</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:statusBarColor">@color/navy_dark</item>
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+
+    <!-- Orange filled button -->
+    <style name="Widget.Bike.Button" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/orange</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="cornerRadius">26dp</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- Navy filled button -->
+    <style name="Widget.Bike.Button.Navy" parent="Widget.Bike.Button">
+        <item name="backgroundTint">@color/navy</item>
+    </style>
+
+    <!-- Outlined button -->
+    <style name="Widget.Bike.Button.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">@color/navy</item>
+        <item name="android:textColor">@color/navy</item>
+        <item name="cornerRadius">26dp</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- Rounded input fields -->
+    <style name="Widget.Bike.Input" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">14dp</item>
+        <item name="boxCornerRadiusTopEnd">14dp</item>
+        <item name="boxCornerRadiusBottomStart">14dp</item>
+        <item name="boxCornerRadiusBottomEnd">14dp</item>
+        <item name="boxStrokeColor">@color/navy</item>
+        <item name="hintTextColor">@color/navy</item>
+    </style>
+
+    <style name="Widget.Bike.Dropdown" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="boxCornerRadiusTopStart">14dp</item>
+        <item name="boxCornerRadiusTopEnd">14dp</item>
+        <item name="boxCornerRadiusBottomStart">14dp</item>
+        <item name="boxCornerRadiusBottomEnd">14dp</item>
+        <item name="boxStrokeColor">@color/navy</item>
+        <item name="hintTextColor">@color/navy</item>
+    </style>
+</resources>

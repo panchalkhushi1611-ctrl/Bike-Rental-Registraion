@@ -1,0 +1,3 @@
+BikeRentalRegistration2 - copy the CONTENTS of this folder into your BikeRentalRegistration2 project (Replace all).
+Then: delete app/src/main/res/values-night, add app/google-services.json (package com.example.bikerentalregistration2),
+paste firestore.rules in Firebase, Sync Gradle, Run.

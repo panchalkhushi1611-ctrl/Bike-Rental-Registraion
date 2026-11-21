@@ -1,0 +1,33 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+    // An admin is a user whose UID has a document in the "admins" collection
+    function isAdmin() {
+      return signedIn() &&
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+
+    match /admins/{adminId} {
+      allow read: if signedIn() && request.auth.uid == adminId;
+      allow write: if false;   // admins are added manually in Firebase Console
+    }
+
+    match /customers/{customerId} {
+      // Direct read: own document (document ID = user UID), or admin
+      allow get: if signedIn() && (customerId == request.auth.uid || isAdmin());
+      // Query/list: only documents owned by the user, or everything for admin
+      allow list: if signedIn() && (resource.data.uid == request.auth.uid || isAdmin());
+      // A normal user can create only their own single document, never demo data
+      allow create: if signedIn() && (
+        (customerId == request.auth.uid
+          && request.resource.data.uid == request.auth.uid
+          && request.resource.data.isDemo == false)
+        || isAdmin());
+      allow update, delete: if isAdmin();
+    }
+  }
+}
